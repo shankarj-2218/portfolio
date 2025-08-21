@@ -10,7 +10,22 @@
   const initial = saved || (prefersDark ? "dark" : "light");
   if (initial === "dark") {
     root.setAttribute("data-theme", "dark");
+  
+  
   }
+
+  const themeToggle = document.querySelector('#themeBtn');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    themeToggle.textContent = "☀️"; // Light mode icon
+  } else {
+    themeToggle.textContent = "🌙"; // Dark mode icon
+  }
+});
 
   function toggle() {
     const current =
@@ -19,8 +34,10 @@
     else root.removeAttribute("data-theme");
     localStorage.setItem(key, current);
     btn.setAttribute("aria-label", "Theme: " + current);
+    
   }
   btn?.addEventListener("click", toggle);
+  
 
   // Active link on scroll
   const links = Array.from(document.querySelectorAll('.links a[href^="#"]'));
