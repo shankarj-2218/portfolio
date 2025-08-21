@@ -19,28 +19,32 @@
 
   </head>
   <body>
-    <header>
+    <header >
       <div class="container nav" role="navigation" aria-label="Primary">
         <a class="brand" href="#top" aria-label="Go to top">
           <span class="dot" aria-hidden="true"></span>
           <span>Shankar Jadhav</span>
         </a>
-        <nav class="links">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-          <button
-            id="themeBtn"
-            class="btn ghost"
-            aria-live="polite"
-            aria-label="Toggle theme"
-          >
-            🌗
-          </button>
-        </nav>
+ <div class="cursor"></div>
+
+<nav class="nav">
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+    <button id="themeBtn" class="btn ghost  theme-toggle" aria-live="polite" aria-label="Toggle theme">🌗</button>
+  </div>
+</nav>
       </div>
+        
     </header>
 
     <main id="top" class="container">
@@ -199,9 +203,9 @@
         <!-- Social + Resume -->
         <div style="margin-top: 24px; text-align: center">
           <a
-            href="https://github.com/YourGitHubUsername"
+            href="https://github.com/shankarj-2218"
             target="_blank"
-            class="btn ghost"
+            class="btn primary"
             style="margin-right: 10px"
           >
             <img
@@ -212,7 +216,7 @@
             />
             GitHub
           </a>
-          <a href="resume.pdf" download class="btn">Download Resume</a>
+          <a href="resume.pdf" download="Shankar-Jadhav-Resume.pdf" class="btn">Download Resume</a>
         </div>
       </section>
 
@@ -323,7 +327,7 @@
               placeholder="Short and sweet…"
               required
             ></textarea>
-            <button class="btn primary" type="submit">Send</button>
+            <button class="btns primary" type="submit">Send</button>
           </form>
         </div>
       </section>
