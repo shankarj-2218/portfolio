@@ -1,143 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="auto">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Minimal, fast, and accessible personal portfolio."
-    />
-    <meta name="color-scheme" content="light dark" />
-    <title>Shankar Jadhav— Portfolio</title>
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000000'/%3E%3Ctext x='50' y='58' font-size='54' text-anchor='middle' fill='%23ffffff' font-family='ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu' %3EY%3C/text%3E%3C/svg%3E"
-    />
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Minimal, fast, and accessible personal portfolio." />
+  <meta name="color-scheme" content="light dark" />
+  <title>Shankar Jadhav— Portfolio</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000000'/%3E%3Ctext x='50' y='58' font-size='54' text-anchor='middle' fill='%23ffffff' font-family='ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu' %3EY%3C/text%3E%3C/svg%3E" />
 
 
-    <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css">
 
-  </head>
-  <body>
-    <header >
-      <div class="container nav" role="navigation" aria-label="Primary">
-        <a class="brand" href="#top" aria-label="Go to top">
-          <span class="dot" aria-hidden="true"></span>
-          <span>Shankar Jadhav</span>
-        </a>
- <div class="cursor"></div>
+</head>
 
-<nav class="nav">
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <div class="links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-    <button id="themeBtn" class="btn ghost " aria-live="polite" aria-label="Toggle theme">🌙</button>
-  </div>
-</nav>
-      </div>
-        
-    </header>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Shankar Jadhav</span>
+      </a>
+      <div class="cursor"></div>
 
-    <main id="top" class="container">
-      <!-- Hero -->
-      <section class="hero">
-        <div class="hero-grid">
-          <div>
-            <span class="badge" aria-hidden="true"
-              >Available for work — 2025</span
-            >
-            <h1>
-              Designer & Front‑end Developer crafting quiet, minimal web
-              experiences.
-            </h1>
-            <!-- <div class="card" style="padding: 10px">
+      <nav class="nav">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#work">Work/Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+          <button id="themeBtn" class="btn ghost " aria-live="polite" aria-label="Toggle theme">🌙</button>
+        </div>
+      </nav>
+    </div>
+
+  </header>
+
+  <main id="top" class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="badge" aria-hidden="true">Available for work — 2025</span>
+          <h1>
+            Designer & Front‑end Developer crafting quiet, minimal web
+            experiences.
+          </h1>
+          <!-- <div class="card" style="padding: 10px">
               <h1 id="typing"></h1>
             </div> -->
-            <p class="lead">
-              I build fast, accessible sites with a focus on clarity and subtle
-              detail. Currently exploring motion, micro‑interactions, and web
-              performance.
-            </p>
-            <div class="cta">
-              <a class="btn primary" href="#work">See my work</a>
-              <a class="btn" href="#contact">Contact</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Work -->
-      <section id="work" class="section">
-        <h2>Selected Work</h2>
-        <p class="muted">A few projects that balance utility and restraint.</p>
-
-        <div class="grid cols-3" role="list">
-          <!-- Project Card -->
-          <article class="card project" role="listitem">
-            <div class="thumb">
-              <img
-                src="./images/kolhapurin.png"
-                alt="Hashtag Kolhapur" class="project-image"
-              />
-            </div>
-            <h3><a href="#"> Hashtag Kolhapur </a></h3>
-            <p class="muted">
-              Brief one‑line description of the outcome and impact.
-            </p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JS</span>
-            </div>
-          </article>
-          <article class="card project" role="listitem">
-            <div class="thumb">16:10 cover</div>
-            <h3>Project Two</h3>
-            <p class="muted">Brief one‑liner about the problem you solved.</p>
-            <div class="tags">
-              <span class="tag">React</span>
-              <span class="tag">UI</span>
-            </div>
-          </article>
-          <article class="card project" role="listitem">
-            <div class="thumb">16:10 cover</div>
-            <h3>Project Three</h3>
-            <p class="muted">Short detail + quantitative result if possible.</p>
-            <div class="tags">
-              <span class="tag">Next.js</span>
-              <span class="tag">A11y</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="about" class="section about">
-        <div class=" card me about-conten">
-          <h2>About</h2>
-          <p class="muted">
-            One clear paragraph about who you are, what you do, and what you
-            value. Keep it human and concrete.
+          <p class="lead">
+            I build fast, accessible sites with a focus on clarity and subtle
+            detail. Currently exploring motion, micro‑interactions, and web
+            performance.
           </p>
-          <ul>
-            <li>💡 Focus: minimal, performant web apps</li>
-            <li>🧰 Tools: HTML, CSS, JS, React, WordPress</li>
-            <li>🌏 Location: Kolhapur, IN</li>
-          </ul>
-          <div style="margin-top: 16px">
-            <a href="resume.pdf" download class="btn">Download Resume</a>
+          <div class="cta">
+            <a class="btn primary" href="#work">See my work</a>
+            <a class="btn" href="#contact">Contact</a>
           </div>
         </div>
-        <!-- <div class="card" style="padding: 20px">
+      </div>
+    </section>
+        <!-- About -->
+    <section id="about" class="section about">
+      <div class=" card me about-conten">
+        <h2>About</h2>
+        <p class="muted">
+          I’m Bablu Jadhav, a passionate Web Developer & Designer with a focus on building clean, minimal, and
+          user-friendly websites. Currently pursuing my BCA (Bachelor of Computer Applications), I’m deeply interested
+          in creating digital experiences that are both visually appealing and functional.
+
+          I enjoy working with modern technologies like JavaScript (ES6+), React, and WordPress, and I love
+          experimenting with design systems that balance creativity with simplicity.
+
+          Beyond coding, I’m constantly learning new trends in UI/UX, SEO optimization, and responsive design, ensuring
+          that every project I work on delivers value and impact.
+        </p>
+
+        
+      </div>
+      <!-- <div class="card" style="padding: 20px">
           <div class="stats">
             <div class="stat">
               <div class="value">15+</div>
@@ -160,192 +110,209 @@
           </div>
           
         </div> -->
-      </section>
-      <!-- Skills -->
-      <section id="skills" class="section">
-        <h2>Skills</h2>
-        <p class="muted">Core technologies and tools I work with.</p>
+    </section>
 
-        <div class="grid cols-3">
-          <article class="card" style="padding: 20px; text-align: center">
-            <h3>Frontend</h3>
-            <div class="tags" style="justify-content: center; margin-top: 8px">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript (ES6+)</span>
-              <span class="tag">React</span>
-              <span class="tag">Next.js</span>
-            </div>
-          </article>
 
-          <article class="card" style="padding: 20px; text-align: center">
-            <h3>Backend / CMS</h3>
-            <div class="tags" style="justify-content: center; margin-top: 8px">
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
-              <span class="tag">WordPress</span>
-              <span class="tag">REST APIs</span>
-            </div>
-          </article>
 
-          <article class="card" style="padding: 20px; text-align: center">
-            <h3>Tools & Others</h3>
-            <div class="tags" style="justify-content: center; margin-top: 8px">
-              <span class="tag">Git/GitHub</span>
-              <span class="tag">SEO (Rank Math)</span>
-              <span class="tag">Figma</span>
-              <span class="tag">Responsive Design</span>
-              <span class="tag">Performance</span>
-            </div>
-          </article>
-        </div>
 
-        <!-- Social + Resume -->
-        <div style="margin-top: 24px; text-align: center">
-          <a
-            href="https://github.com/shankarj-2218"
-            target="_blank"
-            class="btn primary"
-            style="margin-right: 10px"
-          >
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-              alt="GitHub"
-              width="20"
-              style="vertical-align: middle; margin-right: 6px"
-            />
-            GitHub
-          </a>
-          <a href="resume.pdf" download="Shankar-Jadhav-Resume.pdf" class="btn">Download Resume</a>
-        </div>
-      </section>
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <p class="muted">Core technologies and tools I work with.</p>
 
-      <!-- Experience -->
-      <section id="experience" class="section">
-        <h2>Experience</h2>
-        <p class="muted">My professional journey so far.</p>
-
-        <div class="timeline">
-          <!-- Experience 1 -->
-          <div class="timeline-item">
-            <h3>WordPress Developer Intern</h3>
-            <span class="muted">Webroller Company · Sept 2024 – Mar 2025</span>
-            <p>
-                <h4>Responsibilities:</h4>
-                <ul>
-                    <li>Developed and customized WordPress websites for clients.</li>
-                    <li>Worked with themes, plugins, and page builders like Elementor.</li>
-                    <li>Implemented SEO optimization using Rank Math plugin.</li>
-                    <li>Designed and maintained websites for restaurants, hotels, and brands.</li>
-                    <li>Collaborated with the senior development team on UI/UX improvements.</li>
-                </ul>
-            </p>
+      <div class="grid cols-3">
+        <article class="card" style="padding: 20px; text-align: center">
+          <h3>Frontend</h3>
+          <div class="tags" style="justify-content: center; margin-top: 8px">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript (ES6+)</span>
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
           </div>
+        </article>
 
-          <!-- Experience 2 -->
-          <div class="timeline-item">
-            <h3>Freelance Developer</h3>
-            <span class="muted">2024 – Present</span>
-            <p>
-              Built websites for hotels, restaurants, and personal portfolios
-              using WordPress and custom code. Focused on responsive design, SEO
-              optimization, and client satisfaction.
-            </p>
+        <article class="card" style="padding: 20px; text-align: center">
+          <h3>Backend / CMS</h3>
+          <div class="tags" style="justify-content: center; margin-top: 8px">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">WordPress</span>
+            <span class="tag">REST APIs</span>
           </div>
+        </article>
 
-          <!-- Experience 3 -->
-          <div class="timeline-item">
-            <h3>Academic Projects</h3>
-            <span class="muted">BCA · 2022 – 2025</span>
-            <p>
-              Completed multiple projects including portfolio websites,
-              JavaScript applications, and database-driven apps. Gained hands-on
-              experience in software project management, computer networks, and
-              information security.
-            </p>
+        <article class="card" style="padding: 20px; text-align: center">
+          <h3>Tools & Others</h3>
+          <div class="tags" style="justify-content: center; margin-top: 8px">
+            <span class="tag">Git/GitHub</span>
+            <span class="tag">SEO (Rank Math)</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Responsive Design</span>
+            <span class="tag">Performance</span>
           </div>
+        </article>
+      </div>
+
+      <!-- Social + Resume -->
+      <div style="margin-top: 24px; text-align: center">
+        <a href="https://github.com/shankarj-2218" target="_blank" class="btn primary" style="margin-right: 10px">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
+            width="20" style="vertical-align: middle; margin-right: 6px" />
+          GitHub
+        </a>
+        <a href="resume.pdf" download="Shankar-Jadhav-Resume.pdf" class="btn">Download Resume</a>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <p class="muted">My professional journey so far.</p>
+
+      <div class="timeline">
+        <!-- Experience 1 -->
+        <div class="timeline-item">
+          <h3>WordPress Developer Intern</h3>
+          <span class="muted">Webroller Company · Sept 2024 – Mar 2025</span>
+          <p>
+          <h4>Responsibilities:</h4>
+          <ul>
+            <li>Developed and customized WordPress websites for clients.</li>
+            <li>Worked with themes, plugins, and page builders like Elementor.</li>
+            <li>Implemented SEO optimization using Rank Math plugin.</li>
+            <li>Designed and maintained websites for restaurants, hotels, and brands.</li>
+            <li>Collaborated with the senior development team on UI/UX improvements.</li>
+          </ul>
+          </p>
         </div>
-      </section>
-      <!-- Education -->
-      <section id="education" class="section">
-        <h2>Education</h2>
-        <p class="muted">A snapshot of my academic background.</p>
 
-        <div class="grid cols-2">
-          <article class="card" style="padding: 20px">
-            <h3>Bachelor of Computer Applications (BCA)</h3>
-            <p class="muted">
-              Bharati Vidyapeeth Institute of Management, Kolhapur<br />2022 –
-              2025
-            </p>
-          </article>
-
-          <article class="card" style="padding: 20px">
-            <h3>Higher Secondary (12th)</h3>
-            <p class="muted">Rajaram College, Kolhapur<br />2020 – 2022</p>
-          </article>
-
-          <article class="card" style="padding: 20px">
-            <h3>Secondary (10th)</h3>
-            <p class="muted">
-              Shri Kadshiddheshwar High School<br />2015 – 2020
-            </p>
-          </article>
+        <!-- Experience 2 -->
+        <div class="timeline-item">
+          <h3>Freelance Developer</h3>
+          <span class="muted">2024 – Present</span>
+          <p>
+            Built websites for hotels, restaurants, and personal portfolios
+            using WordPress and custom code. Focused on responsive design, SEO
+            optimization, and client satisfaction.
+          </p>
         </div>
-      </section>
 
-      <!-- Contact -->
-      <section id="contact" class="section contact">
-        <h2>Contact</h2>
-        <p class="muted">Have a project in mind? Let’s keep it simple.</p>
-        <div class="card">
-          <form
-            name="contact"
-            onsubmit="event.preventDefault(); alert('Hook this up to Formspree/EmailJS/Netlify Forms.');"
-          >
-            <label class="sr-only" for="name">Name</label>
-            <input
-              id="name"
-              name="name"
-              placeholder="Shankar Jadhav"
-              autocomplete="name"
-              required
-            />
-            <label class="sr-only" for="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              placeholder="you@example.com"
-              type="email"
-              autocomplete="email"
-              required
-            />
-            <label class="sr-only" for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Short and sweet…"
-              required
-            ></textarea>
-            <button class="btns primary" type="submit">Send</button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container row">
-        <span>© <span id="year"></span> Shankar Jadhav</span>
-        <div style="display: flex; gap: 12px">
-          <a href="https://github.com/" aria-label="GitHub">GitHub</a>
-          <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
-          <a href="#top">Back to top ↑</a>
+        <!-- Experience 3 -->
+        <div class="timeline-item">
+          <h3>Academic Projects</h3>
+          <span class="muted">BCA · 2022 – 2025</span>
+          <p>
+            Completed multiple projects including portfolio websites,
+            JavaScript applications, and database-driven apps. Gained hands-on
+            experience in software project management, computer networks, and
+            information security.
+          </p>
         </div>
       </div>
-    </footer>
+    </section>
+        <!-- Work -->
+    <section id="work" class="section">
+      <h2> Work</h2>
+      <p class="muted">A few projects that balance utility and restraint.</p>
 
-    <script src="index.js"></script>
+      <div class="grid cols-3" role="list">
+        <!-- Project Card -->
+        <article class="card project" role="listitem">
+          <div class="thumb">
+            <img src="./images/kolhapurin.png" alt="Hashtag Kolhapur" class="project-image" />
+          </div>
+          <h3><a href="https://hashtagkolhapur.in" target="_blank"> Hashtag Kolhapur </a></h3>
+          <p class="muted">
+            Brief one‑line description of the outcome and impact.
+          </p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+          </div>
+        </article>
+        <article class="card project" role="listitem">
+          <div class="thumb">16:10 cover</div>
+          <h3>Project Two</h3>
+          <p class="muted">Brief one‑liner about the problem you solved.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">UI</span>
+          </div>
+        </article>
+        <article class="card project" role="listitem">
+          <div class="thumb">16:10 cover</div>
+          <h3>Project Three</h3>
+          <p class="muted">Short detail + quantitative result if possible.</p>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">A11y</span>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- Education -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <p class="muted">A snapshot of my academic background.</p>
+
+      <div class="grid cols-2">
+        <article class="card" style="padding: 20px">
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <p class="muted">
+            Bharati Vidyapeeth Institute of Management, Kolhapur<br />2022 –
+            2025
+          </p>
+        </article>
+
+        <article class="card" style="padding: 20px">
+          <h3>Higher Secondary (12th)</h3>
+          <p class="muted">Rajaram College, Kolhapur<br />2020 – 2022</p>
+        </article>
+
+        <article class="card" style="padding: 20px">
+          <h3>Secondary (10th)</h3>
+          <p class="muted">
+            Shri Kadshiddheshwar High School<br />2015 – 2020
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p class="muted">Have a project in mind? Let’s keep it simple.</p>
+      <div class="card">
+        <form name="contact"
+          onsubmit="event.preventDefault(); alert('Hook this up to Formspree/EmailJS/Netlify Forms.');">
+          <label class="sr-only" for="name">Name</label>
+          <input id="name" name="name" placeholder="Shankar Jadhav" autocomplete="name" required />
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" placeholder="you@example.com" type="email" autocomplete="email" required />
+          <label class="sr-only" for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Short and sweet…" required></textarea>
+          <button class="btns primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container row">
+      <span>© <span id="year"></span> Shankar Jadhav</span>
+      <div style="display: flex; gap: 12px">
+        <a href="https://github.com/" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
 
 
-  </body>
+</body>
+
 </html>

@@ -10,22 +10,20 @@
   const initial = saved || (prefersDark ? "dark" : "light");
   if (initial === "dark") {
     root.setAttribute("data-theme", "dark");
-  
-  
   }
 
-  const themeToggle = document.querySelector('#themeBtn');
-const body = document.body;
+  const themeToggle = document.querySelector("#themeBtn");
+  const body = document.body;
 
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
 
-  if (body.classList.contains('dark-mode')) {
-    themeToggle.textContent = "☀️"; // Light mode icon
-  } else {
-    themeToggle.textContent = "🌙"; // Dark mode icon
-  }
-});
+    if (body.classList.contains("dark-mode")) {
+      themeToggle.textContent = "☀️"; // Light mode icon
+    } else {
+      themeToggle.textContent = "🌙"; // Dark mode icon
+    }
+  });
 
   function toggle() {
     const current =
@@ -34,10 +32,8 @@ themeToggle.addEventListener('click', () => {
     else root.removeAttribute("data-theme");
     localStorage.setItem(key, current);
     btn.setAttribute("aria-label", "Theme: " + current);
-    
   }
   btn?.addEventListener("click", toggle);
-  
 
   // Active link on scroll
   const links = Array.from(document.querySelectorAll('.links a[href^="#"]'));
@@ -95,28 +91,23 @@ themeToggle.addEventListener('click', () => {
   // Year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".links");
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".links");
 
-if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("show");
-  });
-
-  // Close menu when a link is clicked (mobile UX)
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navLinks.classList.remove("show");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("show");
     });
-  });
-}
 
-
-
-
-
+    // Close menu when a link is clicked (mobile UX)
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("show");
+      });
+    });
+  }
 
   // const roles = ["Designer", "Front-end Developer", "Freelancer"];
   // let i = 0,

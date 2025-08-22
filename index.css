@@ -58,7 +58,7 @@
 html,
 body {
   height: 100%;
-  line-height: 1.6;
+  line-height: 2;
   transition: background 0.3s, color 0.3s;
 }
 body {
@@ -69,24 +69,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-/* Cursor */
-/* --------------------------------------- */
-.cursor {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background: var(--accent-color);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
-  z-index: 1000;
-}
-.cursor.hovered {
-  width: 30px;
-  height: 30px;
-  opacity: 0.6;
-}
+
 
 a {
   color: inherit;
@@ -195,7 +178,6 @@ header {
   .links.show {
     display: flex;
   }
-  
 }
 
 .btns {
@@ -357,6 +339,7 @@ h1 {
 .about-content {
   max-width: 900px;
   margin: 0 auto;
+  padding-bottom: 3rem;
 }
 
 .about h2 {
@@ -366,7 +349,7 @@ h1 {
 
 .about p {
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  margin: 31px 31px 31px 31px !important;
   color: var(--text-color);
 }
 
