@@ -36,7 +36,7 @@
   --card: #ffffff;
   --shadow: 0 10px 20px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04);
   --radius: 16px;
-  --maxw: 1040px;
+  --maxw: 1184px;
   --timeline-border: #0f172a;
   --timeline-dot: #0f172a;
   --timeline-text: #0f172a;
@@ -80,10 +80,11 @@ a {
   margin: 0 auto;
   padding: 0 20px;
 }
+/* Wrapper ensures sticky works only within it */
 header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 500;
   backdrop-filter: saturate(180%) blur(10px);
   background: color-mix(in oklab, var(--bg) 80%, transparent);
   border-bottom: 1px solid var(--border);
@@ -203,11 +204,6 @@ header {
   cursor: pointer;
   font-weight: 600;
 }
-.btns.primary {
-  background: var(--fg);
-  color: var(--bg);
-  border-color: transparent;
-}
 .btn.primary {
   background: var(--fg);
   color: var(--bg);
@@ -218,8 +214,13 @@ header {
 }
 
 .hero {
-  padding: 72px 0 40px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
