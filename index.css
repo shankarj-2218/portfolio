@@ -53,9 +53,9 @@
   --shadow: 0 12px 24px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.35);
   --timeline-border: #f8fafc;
   --timeline-dot: #f8fafc;
-  --timeline-text: #ddd;
+  --timeline-text: #ffffff;
   --timeline-text: #4dabf7;
-  --fabric-line: rgba(255, 255, 255, 0.03);
+  --fabric-line: rgba(182, 26, 26, 0.03);
 }
 html,
 body {
@@ -68,22 +68,9 @@ body {
 
   line-height: 2;
   transition: background-color 0.5s ease, background-image 0.5s ease;
-  background-image: repeating-linear-gradient(
-      0deg,
-      var(--fabric-line) 0px,
-      var(--fabric-line) 1px,
-      transparent 1px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      var(--fabric-line) 0px,
-      var(--fabric-line) 1px,
-      transparent 1px,
-      transparent 20px
-    );
-  background-blend-mode: multiply;
-  background-size: 20px 20px;
+  background-image: url(./images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #themeBtn {
   font-size: 15px;
@@ -242,6 +229,10 @@ a {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+    margin-top: 1rem;
+  }
   .primary-nav {
     display: none;
   } /* hide desktop links */
@@ -472,7 +463,7 @@ h1 {
 
 /* Inner content container */
 .about-content {
-  max-width: 900px;
+  max-width: var(--maxw);
   margin: 0 auto;
   padding-bottom: 3rem;
 }
