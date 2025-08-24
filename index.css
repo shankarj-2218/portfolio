@@ -68,9 +68,22 @@ body {
 
   line-height: 2;
   transition: background-color 0.5s ease, background-image 0.5s ease;
-  background-image: url(./images/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--fabric-line) 0px,
+      var(--fabric-line) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--fabric-line) 0px,
+      var(--fabric-line) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  background-blend-mode: multiply;
+  background-size: 20px 20px;
 }
 #themeBtn {
   font-size: 15px;
