@@ -40,6 +40,7 @@
   --timeline-border: #0f172a;
   --timeline-dot: #0f172a;
   --timeline-text: #0f172a;
+  --fabric-line: rgba(0, 0, 0, 0.03);
 }
 [data-theme="dark"]:root {
   --bg: #0b0f19;
@@ -54,22 +55,46 @@
   --timeline-dot: #f8fafc;
   --timeline-text: #ddd;
   --timeline-text: #4dabf7;
+  --fabric-line: rgba(255, 255, 255, 0.03);
 }
 html,
 body {
-  height: 100%;
-  line-height: 2;
-  transition: background 0.3s, color 0.3s;
-}
-body {
   margin: 0;
-
+  padding: 0;
   background: var(--bg);
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+
+  line-height: 2;
+  transition: background-color 0.5s ease, background-image 0.5s ease;
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--fabric-line) 0px,
+      var(--fabric-line) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--fabric-line) 0px,
+      var(--fabric-line) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  background-blend-mode: multiply;
+  background-size: 20px 20px;
+}
+#themeBtn {
+  font-size: 15px;
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
 }
 
+#themeBtn:hover {
+  transform: scale(1.2);
+}
 
 a {
   color: inherit;
@@ -80,29 +105,40 @@ a {
   margin: 0 auto;
   padding: 0 20px;
 }
-/* Wrapper ensures sticky works only within it */
-header {
+/* Header layout */
+.site-header {
   position: sticky;
   top: 0;
-  z-index: 500;
-  backdrop-filter: saturate(180%) blur(10px);
-  background: color-mix(in oklab, var(--bg) 80%, transparent);
+  z-index: 1000;
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s ease;
 }
-.nav {
+.site-header:has(.header-bar.shrink) {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.header-bar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: var(--card-bg);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  justify-content: space-between; /* <<< logo left, nav right */
+  gap: 16px;
+  height: 80px; /* default height */
+  padding: 0 20px;
+  transition: height 0.28s ease, padding 0.28s ease;
 }
+
+/* shrink on scroll */
+.header-bar.shrink {
+  height: 56px;
+  padding: 0 16px;
+}
+
+/* brand */
 .brand {
   display: flex;
-  gap: 12px;
   align-items: center;
+  gap: 12px;
   font-weight: 700;
   letter-spacing: 0.2px;
 }
@@ -112,73 +148,174 @@ header {
   border-radius: 999px;
   background: var(--brand);
 }
-.links {
+.logo-text {
+  font-size: 18px;
+  transition: font-size 0.28s ease;
+}
+.header-bar.shrink .logo-text {
+  font-size: 16px;
+}
+
+/* desktop nav (right) */
+.primary-nav {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 24px;
 }
-.links a {
+.primary-nav a {
   opacity: 0.85;
+  padding: 10px 6px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
-.links a:hover,
-.links a.active {
+.primary-nav a:hover {
   opacity: 1;
+  transform: translateY(-1px);
 }
 
-/* Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
+/* right-side actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 160px;
+}
+
+/* theme button */
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: transparent;
+  border-radius: 10px;
+  padding: 8px 10px;
   cursor: pointer;
-  gap: 5px;
+}
+.header-bar.shrink .theme-toggle {
+  transform: scale(0.92);
 }
 
+/* hamburger */
+.hamburger {
+  display: none; /* desktop hidden */
+  width: 28px;
+  height: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
 .hamburger span {
-  width: 25px;
-  height: 3px;
-  background: var(--fg);
-  transition: 0.3s;
-  border-radius: 2px;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 4px;
+  transition: all 0.35s ease;
 }
-
-/* Animate hamburger into X */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(9px) rotate(45deg);
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: translateY(-9px) rotate(-45deg);
+}
+/* mobile nav hidden by default */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 220px;
+  padding: 15px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  z-index: 999;
+}
+/* Show when JS toggles .show */
+/* When shown */
+.mobile-nav.show {
+  display: flex !important;
+  transform: translateY(0);
+  opacity: 1;
 }
 
-/* Links (desktop default) */
-.links {
-  display: flex;
-  gap: 20px;
-}
-
-/* Mobile styles */
+/* RESPONSIVE */
 @media (max-width: 768px) {
+  .primary-nav {
+    display: none;
+  } /* hide desktop links */
   .hamburger {
     display: flex;
-  }
+    color: var(--fg);
+  } /* show hamburger */
 
+  /* theme button left of hamburger */
+  .header-actions {
+    gap: 8px;
+  }
+  .theme-toggle {
+    order: -1;
+  } /* <<< sits left of hamburger */
+  /* mobile drawer */
+  .mobile-nav {
+    display: none !important;
+    position: none;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    gap: 8px;
+    padding: 12px 16px 16px;
+  }
+  /* Hide links by default on mobile */
   .links {
     display: none;
-    flex-direction: column;
-    background: var(--bg, #fff);
     position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    top: calc(100% + 10px);
+    right: 0;
+    flex-direction: column;
+    gap: 8px;
+    width: 220px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    box-shadow: var(--shadow);
+    z-index: 999;
   }
-
+  /* Show when toggled */
   .links.show {
     display: flex;
   }
+
+
+  /* (optional) put theme button to the left of hamburger if it's next to it */
+  #themeBtn {
+    order: -1;
+  }
+
+  .mobile-nav a {
+    padding: 10px 6px;
+  }
+}
+
+/* end` */
+
+.links {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  position: absolute;
+  top: 60px;
+  gap: 20px;
+  align-items: center;
+  right: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btns {
@@ -220,8 +357,7 @@ header {
   align-items: center;
   justify-content: center;
 }
-
-.hero-grid {
+vg .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 32px;

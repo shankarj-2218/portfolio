@@ -17,32 +17,44 @@
 
 <body>
 
-  <header>
-    <div class="container nav" role="navigation" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Go to top">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Shankar Jadhav</span>
-      </a>
-      <div class="cursor"></div>
+<header class="site-header">
+  <div class="container header-bar">
+    <!-- Logo (left) -->
+    <a class="brand" href="#top" aria-label="Go to top">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="logo-text">Shankar Jadhav</span>
+    </a>
 
-      <nav class="nav">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#work">Work/Projects</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-          <button id="themeBtn" class="btn ghost " aria-live="polite" aria-label="Toggle theme">🌙</button>
-        </div>
-      </nav>
+    <!-- Desktop nav (right) -->
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work/Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  </header>
+    <!-- Actions (right) -->
+    <div class="header-actions">
+      <button id="themeBtn" class="theme-toggle" aria-label="Toggle theme">🌗</button>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <nav id="mobileNav" class="mobile-nav" aria-label="Mobile" hidden>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Work/Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
   </div>
 
 
