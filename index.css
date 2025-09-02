@@ -40,7 +40,6 @@
   --timeline-text: #0f172a;
   --fabric-line: rgba(0, 0, 0, 0.03);
   --bg-gradient-light: linear-gradient(135deg, #f8fafc, #f3ecfc, #e7f6ff);
-
 }
 
 [data-theme="dark"]:root {
@@ -229,7 +228,7 @@ a {
   display: flex !important;
   transform: translateY(0);
   opacity: 1;
-  background-color: var(--accent);
+  background-color: var(--muted);
 }
 
 /* ------------------------------
@@ -241,6 +240,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-content {
+  flex: 1;
+  animation: fadeInLeft 1s ease-in-out;
 }
 
 .hero-grid {
@@ -365,7 +369,6 @@ h1 {
 .about {
   width: 100%;
   padding: 0px 0px;
-  background: var(--card);
   border-radius: 0;
   text-align: center;
 }
@@ -377,32 +380,13 @@ h1 {
 .about h2 {
   font-size: 2rem;
   margin-bottom: 16px;
+  margin-left: 35px;
+  text-align: left;
 }
 .about p {
   font-size: 1.1rem;
   margin: 31px;
   color: var(--fg);
-}
-.about ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px 0;
-}
-.about ul li {
-  margin: 10px 0;
-  font-size: 1rem;
-}
-.about .btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background: var(--fg);
-  color: var(--bg);
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-.about .btn:hover {
-  transform: scale(1.05);
 }
 .about .stats {
   display: grid;
@@ -607,8 +591,61 @@ footer {
 .btn.primary {
   background: var(--accent);
   color: var(--bg);
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-color: transparent;
 }
 .btn.ghost {
   background: transparent;
+}
+/* Button loading state */
+.btn.primary.loading {
+  position: relative;
+  color: transparent; /* hide text */
+  pointer-events: none;
+}
+.btn.primary.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  transform: translate(-50%, -50%);
+}
+@keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Toast notification */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
 }

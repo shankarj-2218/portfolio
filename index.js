@@ -169,3 +169,57 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
+
+let lastMessage = null; // store last message
+
+function showToast(message, isSuccess = true) {
+  const toast = document.getElementById("toast");
+  toast.innerText = message;
+  toast.style.background = isSuccess ? "#4BB543" : "#FF3333"; // green/red
+  toast.className = "toast show";
+
+  setTimeout(() => {
+    toast.className = toast.className.replace("show", "");
+  }, 3000);
+}
+
+document
+  .querySelector("form[name='contact']")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const currentMessage = `${name}|${email}|${message}`;
+    const sendBtn = e.target.querySelector("button[type=submit]");
+
+    // ✅ Prevent duplicate submission of same data
+    if (currentMessage === lastMessage) {
+      showToast("⚠️ You already sent this message!", false);
+      return;
+    }
+
+    // 🔒 Disable button while sending
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Sending...";
+
+    const params = { name, email, message };
+
+    emailjs.send("service_wzmnhh9", "template_2cygafe", params).then(
+      function () {
+        showToast("✅ Message sent successfully!");
+        lastMessage = currentMessage; // save as last sent
+        e.target.reset();
+      },
+      function (error) {
+        showToast("❌ Failed to send. Try again.", false);
+        console.error("Error", error);
+      }
+    ).finally(() => {
+      // 🔓 Re-enable button after attempt
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send";
+    });
+  });

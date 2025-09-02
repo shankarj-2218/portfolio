@@ -75,8 +75,8 @@
       </p>
       <div class="cta">
         <a class="btn primary" href="#work">See my work</a>
-        <a class="btn" href="#contact">Contact</a>
-      </div>
+        <a class="btn" href="#contact">Download Resume</a>
+     
     </div>
   </div>
 </section>
@@ -84,8 +84,8 @@
 
         <!-- About -->
     <section id="about" class="section about">
-      <div class=" card me about-conten">
-        <h2>About</h2>
+      <div class="  me about-conten">
+        <h2 >About</h2>
         <p class="muted">
           I’m Shankar Jadhav, a passionate Web Developer & Designer with a focus on building clean, minimal, and
           user-friendly websites. Currently pursuing my BCA (Bachelor of Computer Applications), I’m deeply interested
@@ -174,7 +174,7 @@
             width="20" style="vertical-align: middle; margin-right: 3px ;" />
           GitHub
         </a>
-        <a href="resume.pdf" download="Shankar-Jadhav-Resume.pdf" class="btn">Download Resume</a>
+        <!-- <a href="resume.pdf" download="Shankar-Jadhav-Resume.pdf" class="btn">Download Resume</a> -->
       </div>
     </section>
 
@@ -237,7 +237,7 @@
           </div>
           <h3><a href="https://hashtagkolhapur.in" target="_blank"> Hashtag Kolhapur </a></h3>
           <p class="muted">
-            Brief one‑line description of the outcome and impact.
+           Designed and developed Hashtag Kolhapur’s website, delivering a modern, responsive platform that improved brand visibility and customer engagement.
           </p>
           <div class="tags">
             <span class="tag">WordPress</span>
@@ -247,7 +247,7 @@
         <article class="card project" role="listitem">
           <div class="thumb"><img class="project-image" src="./images/unique99.png" alt="Unique99"></div>
           <h3>Unique99</h3>
-          <p class="muted">Brief one‑liner about the problem you solved.</p>
+          <p class="muted">Designed and launched the Unique99 website, showcasing artisanal, alcohol-free perfumes through a modern, sensory-first interface.</p>
           <div class="tags">
             <span class="tag">WordPress</span>
           </div>
@@ -255,7 +255,7 @@
         <article class="card project" role="listitem">
           <div class="thumb"><img src="./images/orbit-spaces.png" alt="orbit-spaces" class="project-image"></div>
           <h3>Orbit Spaces </h3>
-          <p class="muted">Short detail + quantitative result if possible.</p>
+          <p class="muted">Designed and developed Orbit Spaces’ real estate platform, showcasing upscale residential projects like Orbit Urban Park and Orbit Bella, creating a visually appealing and investment-focused digital experience.</p>
           <div class="tags">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
@@ -297,16 +297,18 @@
       <h2>Contact</h2>
       <p class="muted">Have a project in mind? Let’s keep it simple.</p>
       <div class="card">
-        <form name="contact"
-          onsubmit="event.preventDefault(); alert('Hook this up to Formspree/EmailJS/Netlify Forms.');">
-          <label class="sr-only" for="name">Name</label>
-          <input id="name" name="name" placeholder="Shankar Jadhav" autocomplete="name" required />
-          <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" placeholder="you@example.com" type="email" autocomplete="email" required />
-          <label class="sr-only" for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Short and sweet…" required></textarea>
-          <button class="btns primary" type="submit">Send</button>
-        </form>
+       <form name="contact" id="contact-form">
+  <label class="sr-only" for="name">Name</label>
+  <input id="name" name="name" placeholder="Shankar Jadhav" autocomplete="name" required />
+  
+  <label class="sr-only" for="email">Email</label>
+  <input id="email" name="email" placeholder="you@example.com" type="email" autocomplete="email" required />
+  
+  <label class="sr-only" for="message">Message</label>
+  <textarea id="message" name="message" placeholder="Short and sweet…" required></textarea>
+  
+  <button class="btn primary" type="submit">Send</button>
+</form>
       </div>
     </section>
   </main>
@@ -315,14 +317,29 @@
     <div class="container row">
       <span>© <span id="year"></span> Shankar Jadhav</span>
       <div style="display: flex; gap: 12px">
-        <a href="https://github.com/" aria-label="GitHub">GitHub</a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/shankarj-2218" aria-label="GitHub">GitHub</a>
+        <a href="www.linkedin.com/in/shankar-jadhav-8497a9374" aria-label="LinkedIn">LinkedIn</a>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
   </footer>
 
   <script src="index.js"></script>
+
+  <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "DLtONv2obG7bESfWo",
+      });
+   })();
+</script>
+
+  <div id="toast"></div>
+
 
 
 </body>
