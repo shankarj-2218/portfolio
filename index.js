@@ -180,7 +180,7 @@ function showToast(message, isSuccess = true) {
 
   setTimeout(() => {
     toast.className = toast.className.replace("show", "");
-  }, 3000);
+  }, 900);
 }
 
 document
