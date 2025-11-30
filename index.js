@@ -1,5 +1,10 @@
 // index.js — stable mobile nav + theme + shrink + anchors + reveal
 document.addEventListener("DOMContentLoaded", () => {
+
+  
+
+
+
   // =========================
   // Theme toggle (data-theme)
   // =========================
@@ -104,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Active link highlight
   // =========================
   const navAnchors = Array.from(
-    document.querySelectorAll('.links a[href^="#"], .primary-nav a[href^="#"]')
+    document.querySelectorAll('.mobile-nav a[href^="#"], .primary-nav a[href^="#"]')
   );
   const targets = navAnchors
     .map((a) => document.querySelector(a.getAttribute("href")))

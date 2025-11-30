@@ -13,7 +13,7 @@
   font-family: "Jost";
   font-style: normal;
   font-weight: 400;
-  src: url("./fonts/Jost-Regular.ttf") format("woff");
+  src: url("./fonts/Jost-Regular.ttf") format("truetype");
 }
 
 * {
@@ -26,8 +26,10 @@
    Minimal Portfolio — Styles
    ------------------------------ */
 :root {
+  --bg: #ffffff;
   --fg: #1a1a1a;
-  --muted: #555;
+  --muted: #352f2f;
+  --mob-nav: #ffffffee;
   --border: #e2e8f0;
   --brand: #0d0d0d;
   --accent: #4476e0;
@@ -39,12 +41,30 @@
   --timeline-dot: #0f172a;
   --timeline-text: #0f172a;
   --fabric-line: rgba(0, 0, 0, 0.03);
-  --bg-gradient-light: linear-gradient(135deg, #f8fafc, #f3ecfc, #e7f6ff);
+  --bg-gradient-light: linear-gradient(
+    135deg,
+    #f0f4ff,
+    #ffffff,
+    #e0e7ff,
+    #f9fafb
+  );
+
+  --orbit-blue: #60a5fa;
+  --orbit-purple: #a855f7;
+  --orbit-green: #22c55e;
+  --orbit-pink: #fb7185;
+  --orbit-nubrela: #d4067ef3;
+  --orbit-amber: #f97316;
+  --orbit-cyan: #22d3ee;
+  --dots-color: rgba(148, 163, 184, 0.7);
 }
 
 [data-theme="dark"]:root {
+  --bg: #0b1220;
   --fg: #f8fafc;
   --muted: #cbd5e1;
+  --mob-nav: #15162e;
+
   --border: #1f2937;
   --brand: #f8fafc;
   --accent: #013d86;
@@ -54,8 +74,21 @@
   --timeline-border: #f8fafc;
   --timeline-dot: #f8fafc;
   --timeline-text: #60a5fa;
-  --bg-gradient-dark: linear-gradient(135deg, #0d0c1d, #2c1e4a, #1b2735, #000);
-  --btn: ;
+  --bg-gradient-dark: linear-gradient(
+    135deg,
+    #0d0c1d,
+    #2c1e4a,
+    #1b2735,
+    #0b1220
+  );
+  --orbit-blue: #3b82f6;
+  --orbit-purple: #8b5cf6;
+  --orbit-green: #22c55e;
+  --orbit-pink: #fb7185;
+  --orbit-amber: #fbbf24;
+  --orbit-cyan: #06b6d4;
+  --orbit-nubrela: #f731ab;
+  --dots-color: rgba(148, 163, 184, 0.5);
 }
 
 html,
@@ -228,18 +261,21 @@ a {
   display: flex !important;
   transform: translateY(0);
   opacity: 1;
-  background-color: var(--muted);
+  background-color: var(--mob-nav);
 }
 
 /* ------------------------------
    Hero
    ------------------------------ */
-.hero {
-  position: relative;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
+.hero-inner,
+.hero-overlay {
+  z-index: 3;
+  max-width: var(--maxw);
+  width: 100%;
+  /* margin: 0 auto; */
+  padding: 80px 20px 72px;
 }
 
 .hero-content {
@@ -253,6 +289,269 @@ a {
   gap: 32px;
   align-items: center;
 }
+
+.hero-orbit {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(0);
+  opacity: 0.9; /* slightly fuller on light background */
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  will-change: transform;
+  z-index: 1;
+}
+/* Dark theme: keep soft-light for subtle glow */
+[data-theme="dark"] .hero-orbit {
+  mix-blend-mode: soft-light;
+  opacity: 9;
+}
+
+[data-theme="dark"] .hero-dots {
+  mix-blend-mode: soft-light;
+  opacity: 0.55;
+}
+
+.hero-dots {
+  mix-blend-mode: normal;
+  opacity: 0.8;
+}
+
+/* Main 3 big blobs */
+.hero-orbit--one {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(
+    circle at 30% 20%,
+    var(--orbit-blue),
+    transparent 60%
+  );
+  top: -140px;
+  right: -80px;
+  animation: floatOrbOne 6s ease-in-out infinite alternate;
+}
+.hero-orbit--seven {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    var(--orbit-nubrela),
+    transparent 60%
+  );
+  top: -140px;
+  left: 80px;
+  animation: floatOrbOne 6s ease-in-out infinite alternate;
+}
+.hero-orbit--two {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(
+    circle at 70% 80%,
+    var(--orbit-purple),
+    transparent 60%
+  );
+  top: 30%;
+  left: -140px;
+  animation: floatOrbTwo 8s ease-in-out infinite alternate;
+}
+.hero-orbit--three {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--orbit-green),
+    transparent 60%
+  );
+  bottom: -140px;
+  right: 18%;
+  opacity: 0.45;
+  animation: floatOrbThree 9s ease-in-out infinite alternate;
+}
+
+/* Extra subtle blobs for premium feel */
+.hero-orbit--four {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle at 40% 30%,
+    var(--orbit-pink),
+    transparent 65%
+  );
+  top: 10%;
+  right: 45%;
+  opacity: 0.77;
+  animation: floatOrbTwo 6s ease-in-out infinite alternate-reverse;
+}
+.hero-orbit--five {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle at 60% 70%,
+    var(--orbit-amber),
+    transparent 65%
+  );
+  bottom: 8%;
+  left: 15%;
+  opacity: 0.55;
+  animation: floatOrbOne 5s ease-in-out infinite alternate-reverse;
+}
+.hero-orbit--six {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--orbit-cyan),
+    transparent 65%
+  );
+  top: 50%;
+  right: -40px;
+  opacity: 0.65;
+  animation: floatOrbThree 7s ease-in-out infinite alternate-reverse;
+}
+
+/* === DOT GRIDS === */
+.hero-dots {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background-image: radial-gradient(
+    circle,
+    var(--dots-color) 1px,
+    transparent 1px
+  );
+  background-size: 10px 10px;
+  opacity: 0.5;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  will-change: transform;
+  z-index: 1;
+}
+
+/* Left cluster */
+.hero-dots--left {
+  top: 14%;
+  left: 4%;
+  animation: dotsDriftLeft 6s linear infinite alternate;
+}
+.hero-dots--left1 {
+  top: 34%;
+  left: -2%;
+  transform: scale(0.8);
+  animation: dotsDriftLeft 8s linear infinite alternate-reverse;
+}
+.hero-dots--left2 {
+  top: 54%;
+  left: 6%;
+  transform: scale(0.9);
+  animation: dotsDriftLeft 9s linear infinite alternate;
+}
+
+/* Right cluster */
+.hero-dots--right {
+  bottom: 8%;
+  right: 6%;
+  animation: dotsDriftRight 19s linear infinite alternate;
+}
+.hero-dots--right1 {
+  bottom: 26%;
+  right: 0%;
+  transform: scale(0.85);
+  animation: dotsDriftRight 21s linear infinite alternate-reverse;
+}
+.hero-dots--right2 {
+  bottom: 40%;
+  right: 10%;
+  transform: scale(0.7);
+  animation: dotsDriftRight 23s linear infinite alternate;
+}
+
+/* === Animations === */
+@keyframes floatOrbOne {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-20px, 18px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(10px, -16px, 0) scale(1.02);
+  }
+}
+
+@keyframes floatOrbTwo {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(26px, -18px, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-12px, 22px, 0) scale(1.03);
+  }
+}
+
+@keyframes floatOrbThree {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.98);
+  }
+  50% {
+    transform: translate3d(-18px, 10px, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(10px, -18px, 0) scale(1);
+  }
+}
+
+@keyframes dotsDriftLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(18px, 10px, 0);
+  }
+}
+
+@keyframes dotsDriftRight {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-22px, -16px, 0);
+  }
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-sidecard {
+    order: -1;
+  }
+
+  .hero-dots--right {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-orbit--one,
+  .hero-orbit--two,
+  .hero-orbit--three {
+    opacity: 0.45;
+  }
+
+  
+}
+
+@media (max-width: 768px) {
+  .hero-orbit--one
+  .hero-orbit--seven
+   {
+    display: none;
+  }
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -370,7 +669,7 @@ h1 {
   width: 100%;
   padding: 0px 0px;
   border-radius: 0;
-  text-align: center;
+  /* text-align: ; */
 }
 .about-content {
   max-width: var(--maxw);
@@ -513,7 +812,6 @@ footer {
    ------------------------------ */
 @media (max-width: 768px) {
   .hero {
-    height: 70vh;
     margin-top: 1rem;
   }
   .primary-nav {
@@ -540,24 +838,7 @@ footer {
     gap: 8px;
     padding: 12px 16px 16px;
   }
-  .links {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-    flex-direction: column;
-    gap: 8px;
-    width: 220px;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--bg);
-    box-shadow: var(--shadow);
-    z-index: 999;
-  }
-  .links.show {
-    display: flex;
-  }
+  /* .links (unused) removed — mobile-nav handles mobile links */
   #themeBtn {
     order: -1;
   }
