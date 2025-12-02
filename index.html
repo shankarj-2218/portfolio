@@ -7,8 +7,7 @@
   <meta name="description" content="Minimal, fast, and accessible personal portfolio." />
   <meta name="color-scheme" content="light dark" />
   <title>Shankar Jadhav— Portfolio</title>
-  <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000000'/%3E%3Ctext x='50' y='58' font-size='54' text-anchor='middle' fill='%23ffffff' font-family='ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu' %3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
 
 
   <link rel="stylesheet" href="index.css">
@@ -37,7 +36,8 @@
 
       <!-- Actions (right) -->
       <div class="header-actions">
-        <button id="themeBtn" type="button" class="theme-toggle" aria-label="Toggle theme">🌗</button>
+
+        <button id="themeBtn" type="button" class="theme-toggle" aria-label="Toggle theme"></button>
         <button id="hamburger" type="button" class="hamburger" aria-label="Open menu" aria-expanded="false"
           aria-controls="mobileNav">
           <span></span><span></span><span></span>
@@ -80,23 +80,41 @@
             <span class="badge" aria-hidden="true">Available for work — 2025</span>
             <h1>
               Hi, I'm Shankar Jadhav,<br />
-Front-end Developer crafting quiet,<br /> minimal web
-        experiences.
+              Front-end Developer crafting quiet,<br /> minimal web
+              experiences.
             </h1>
             <p class="lead">
               I build fast, accessible sites with a focus on clarity and subtle
               detail. Currently exploring motion, micro-interactions, and web
               performance.
             </p>
+
             <div class="cta">
-              <a class="btn primary" href="#work">See my work</a>
+
+              <a class="btn work primary" href="#work">See my work</a>
               <a class="btn" target="_blank" rel="noopener noreferrer"
                 href="./images/Shankar_Jadhav_Resume_2025.pdf">Download Resume</a>
+
+              <div class="lg-icon">
+                <a class="linkedin" target="_blank" href="https://linkedin.com/in/shankar-jadhav1822/">
+                  <svg width="42" height="42" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="12" fill="#0a66c2" />
+                    <path fill="#fff"
+                      d="M12.04 16.96H6.78V10h2.26v6.96zM7.91 8.91a1.31 1.31 0 110-2.62 1.31 1.31 0 010 2.62zM18 16.96h-2.22v-3.57c0-.85-.02-1.94-1.18-1.94-1.18 0-1.36.92-1.36 1.88v3.63H11V10h2.13v.95h.03c.3-.56 1.03-1.15 2.12-1.15 2.27 0 2.72 1.49 2.72 3.43v3.73z" />
+                  </svg>
+                </a>
+
+                <a class="github" target="_blank" href="https://github.com/shankarj-2218">
+                  <svg width="42" height="42" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                      d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1C6.2 21 5.5 19 5.5 19c-.6-1.5-1.4-1.9-1.4-1.9-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 013 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 2 1.2 3.3 0 4.6-2.7 5.6-5.3 5.9.4.3.8.9.8 1.8v2.7c0 .3.2.7.8.6A10.9 10.9 0 0023.5 12c0-6.3-5.2-11.5-11.5-11.5z" />
+                  </svg>
+                </a>
+              </div>
 
             </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
 
@@ -111,9 +129,8 @@ Front-end Developer crafting quiet,<br /> minimal web
           in creating digital experiences that are both visually appealing and functional.
           I enjoy working with modern technologies like JavaScript (ES6+), React, and WordPress, and I love
           experimenting with design systems that balance creativity with simplicity.
-
-          Beyond coding, I’m constantly learning new trends , SEO optimization, and responsive design, ensuring
-          that every project I work on delivers value and impact.
+          Beyond coding, I’m constantly learning new trends , SEO optimization, and responsive design, ensuring that
+          every project I work on delivers value and impact.
         </p>
 
 
@@ -153,7 +170,7 @@ Front-end Developer crafting quiet,<br /> minimal web
           <div class="tags" style="justify-content: center; margin-top: 8px">
             <span class="tag">Git/GitHub</span>
             <span class="tag">SEO (Rank Math)</span>
-            <span class="tag">Responsive Design</span>
+            <!-- <span class="tag">Responsive Design</span> -->
           </div>
         </article>
       </div>
@@ -331,13 +348,29 @@ Front-end Developer crafting quiet,<br /> minimal web
     <div class="container row">
       <span>© <span id="year"></span> Shankar Jadhav</span>
       <div style="display: flex; gap: 12px">
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/shankarj-2218"
-          aria-label="GitHub">GitHub</a>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/shankar-jadhav-2218"
-          aria-label="LinkedIn">LinkedIn</a>
-        <a href="#top">Back to top ↑</a>
+
+        <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/shankar-jadhav1822/"
+          aria-label="LinkedIn">
+          <svg width="35" height="35" viewBox="0 0 30 30" aria-hidden="true">
+            <circle cx="12" cy="12" r="12" fill="#0a66c2" />
+            <path fill="#fff"
+              d="M12.04 16.96H6.78V10h2.26v6.96zM7.91 8.91a1.31 1.31 0 110-2.62 1.31 1.31 0 010 2.62zM18 16.96h-2.22v-3.57c0-.85-.02-1.94-1.18-1.94-1.18 0-1.36.92-1.36 1.88v3.63H11V10h2.13v.95h.03c.3-.56 1.03-1.15 2.12-1.15 2.27 0 2.72 1.49 2.72 3.43v3.73z" />
+          </svg>
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/shankarj-2218" aria-label="GitHub">
+          <svg width="35" height="35" viewBox="0 0 30 30">
+            <path fill="currentColor"
+              d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1C6.2 21 5.5 19 5.5 19c-.6-1.5-1.4-1.9-1.4-1.9-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 013 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 2 1.2 3.3 0 4.6-2.7 5.6-5.3 5.9.4.3.8.9.8 1.8v2.7c0 .3.2.7.8.6A10.9 10.9 0 0023.5 12c0-6.3-5.2-11.5-11.5-11.5z" />
+          </svg></a>
       </div>
     </div>
+    <a class="back-top" href="#top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+        class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+        <path
+          d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+      </svg>
+    </a>
   </footer>
 
   <script src="index.js"></script>

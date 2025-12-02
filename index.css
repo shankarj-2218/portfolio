@@ -57,6 +57,8 @@
   --orbit-amber: #f97316;
   --orbit-cyan: #22d3ee;
   --dots-color: rgba(148, 163, 184, 0.7);
+
+  --li-color: #0a66c2;
 }
 
 [data-theme="dark"]:root {
@@ -89,6 +91,7 @@
   --orbit-cyan: #06b6d4;
   --orbit-nubrela: #f731ab;
   --dots-color: rgba(148, 163, 184, 0.5);
+  --li-color: #fff;
 }
 
 html,
@@ -101,12 +104,33 @@ body {
   text-rendering: optimizeLegibility;
   line-height: 2;
   transition: background 0.5s ease, color 0.5s ease;
-  line-height: 2;
   transition: background-color 0.5s ease, background-image 0.5s ease;
 }
 
 [data-theme="dark"] body {
   background: var(--bg-gradient-dark);
+}
+
+a svg {
+  color: var(--icon-color);
+  transition: 0.3s ease;
+}
+a.linkedin {
+  position: relative;
+  color: var(--icon-color);
+  padding-right: 5px;
+}
+.lg-icon {
+  position: relative;
+
+  top: 6px;
+}
+
+a.back-top svg {
+  position: fixed;
+  /* margin-left: 30px; */
+  right: 40px;
+  bottom: 30px;
 }
 
 /* Theme toggle */
@@ -268,7 +292,6 @@ a {
    Hero
    ------------------------------ */
 
-
 .hero-inner,
 .hero-overlay {
   z-index: 3;
@@ -303,7 +326,7 @@ a {
 /* Dark theme: keep soft-light for subtle glow */
 [data-theme="dark"] .hero-orbit {
   mix-blend-mode: soft-light;
-  opacity: 9;
+  opacity: 0.6;
 }
 
 [data-theme="dark"] .hero-dots {
@@ -311,10 +334,7 @@ a {
   opacity: 0.55;
 }
 
-.hero-dots {
-  mix-blend-mode: normal;
-  opacity: 0.8;
-}
+/* full .hero-dots definition below */
 
 /* Main 3 big blobs */
 .hero-orbit--one {
@@ -540,14 +560,11 @@ a {
   .hero-orbit--three {
     opacity: 0.45;
   }
-
-  
 }
 
 @media (max-width: 768px) {
-  .hero-orbit--one
-  .hero-orbit--seven
-   {
+  /* Hide extra orbit if present on small screens */
+  .hero-orbit--seven {
     display: none;
   }
 }
