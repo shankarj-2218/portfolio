@@ -1,10 +1,5 @@
 // index.js — stable mobile nav + theme + shrink + anchors + reveal
 document.addEventListener("DOMContentLoaded", () => {
-
-  
-
-
-
   // =========================
   // Theme toggle (data-theme)
   // =========================
@@ -93,6 +88,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  //handle back-top button hide/show
+
+  const btn = document.getElementById("backTotop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      btn.classList.add("show"); // Show after scroll
+    } else {
+      btn.classList.remove("show"); // Hide at top
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   // =========================
   // Shrink header on scroll
   // =========================
@@ -109,7 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Active link highlight
   // =========================
   const navAnchors = Array.from(
-    document.querySelectorAll('.mobile-nav a[href^="#"], .primary-nav a[href^="#"]')
+    document.querySelectorAll(
+      '.mobile-nav a[href^="#"], .primary-nav a[href^="#"]'
+    )
   );
   const targets = navAnchors
     .map((a) => document.querySelector(a.getAttribute("href")))
@@ -212,19 +225,22 @@ document
 
     const params = { name, email, message };
 
-    emailjs.send("service_wzmnhh9", "template_2cygafe", params).then(
-      function () {
-        showToast("✅ Message sent successfully!");
-        lastMessage = currentMessage; // save as last sent
-        e.target.reset();
-      },
-      function (error) {
-        showToast("❌ Failed to send. Try again.", false);
-        console.error("Error", error);
-      }
-    ).finally(() => {
-      // 🔓 Re-enable button after attempt
-      sendBtn.disabled = false;
-      sendBtn.textContent = "Send";
-    });
+    emailjs
+      .send("service_wzmnhh9", "template_2cygafe", params)
+      .then(
+        function () {
+          showToast("✅ Message sent successfully!");
+          lastMessage = currentMessage; // save as last sent
+          e.target.reset();
+        },
+        function (error) {
+          showToast("❌ Failed to send. Try again.", false);
+          console.error("Error", error);
+        }
+      )
+      .finally(() => {
+        // 🔓 Re-enable button after attempt
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Send";
+      });
   });
